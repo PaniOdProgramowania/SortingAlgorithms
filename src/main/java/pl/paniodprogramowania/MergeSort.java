@@ -30,7 +30,7 @@ public class MergeSort implements SortingAlgorithm {
     }
     int i = 0;
     int j = 0;
-    int k = 0;
+    int k = leftIndex;
 
     while (i < lengthOfLeftArray && j < lengthOfRightArray) {
       if (leftArray[i] <= rightArray[j]) {

@@ -8,8 +8,8 @@ public class SelectionSort implements SortingAlgorithm {
     int n = tab.length;
     for (int i = 0; i < n; i++) {
       int indexOfMinim = i;
-      for (int j = i; j < n; j++) {
-        if (tab[j] < tab[j]) {
+      for (int j = i + 1; j < n; j++) {
+        if (tab[j] < tab[indexOfMinim]) {
           indexOfMinim = j;
         }
       }
@@ -19,7 +19,7 @@ public class SelectionSort implements SortingAlgorithm {
   }
 
   private void swap(int[] tab, int i, int indexOfMinim) {
-    int tmp = tab[indexOfMinim];
+    int tmp = tab[i];
     tab[i] = tab[indexOfMinim];
     tab[indexOfMinim] = tmp;
   }

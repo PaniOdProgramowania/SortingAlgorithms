@@ -9,7 +9,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 class InsertSortTest {
 
   @ParameterizedTest
-  @ValueSource(ints = {10, 100, 1000, 10_000, 100_000})
+  @ValueSource(ints = {5, 10, 100, 1000, 10_000, 100_000})
   public void shouldSort(int n) {
     //given
     int[] array = new int[n];
@@ -23,7 +23,7 @@ class InsertSortTest {
 
     //then
     for (int i = 0; i < n - 1; i++) {
-      assertTrue(result[i] <= result[i++]);
+      assertTrue(result[i] <= result[i + 1]);
     }
   }
 

@@ -8,7 +8,7 @@ public class BubbleSort implements SortingAlgorithm {
     int n = tab.length;
     for (int i = 0; i < n; i++) {
       for (int j = 0; j < n; j++) {
-        if (tab[i] > tab[j]) {
+        if (tab[j] > tab[i]) {
           swap(tab, i, j);
         }
       }

@@ -23,7 +23,7 @@ class MergeSortTest {
 
     //then
     for (int i = 0; i < n - 1; i++) {
-      assertTrue(result[i] <= result[i++]);
+      assertTrue(result[i] <= result[i + 1]);
     }
   }
 
