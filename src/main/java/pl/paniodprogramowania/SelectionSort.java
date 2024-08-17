@@ -1,26 +1,29 @@
 package pl.paniodprogramowania;
 
+import static pl.paniodprogramowania.Helpers.swap;
+
 // sortowanie przez wybor
 public class SelectionSort implements SortingAlgorithm {
 
   @Override
-  public int[] sort(int[] tab) {
-    int n = tab.length;
+  public int[] sort(int[] array) {
+    int n = array.length;
     for (int i = 0; i < n; i++) {
-      int indexOfMinim = i;
-      for (int j = i + 1; j < n; j++) {
-        if (tab[j] < tab[indexOfMinim]) {
-          indexOfMinim = j;
-        }
-      }
-      swap(tab, i, indexOfMinim);
+      int indexOfMinim = findIndexOfMinElement(array, i);
+      swap(array, i, indexOfMinim);
     }
-    return tab;
+    return array;
   }
 
-  private void swap(int[] tab, int i, int indexOfMinim) {
-    int tmp = tab[i];
-    tab[i] = tab[indexOfMinim];
-    tab[indexOfMinim] = tmp;
+  private static int findIndexOfMinElement(int[] array, int startIndex){
+    int indexOfMinim = startIndex;
+    int minValue = array[startIndex];
+    for (int j = startIndex + 1; j < array.length; j++) {
+      if (array[j] < minValue) {
+        indexOfMinim = j;
+        minValue = array[j];
+      }
+    }
+    return indexOfMinim;
   }
 }
